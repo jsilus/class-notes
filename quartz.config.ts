@@ -3,13 +3,13 @@ import * as Plugin from "./quartz/plugins"
 
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "🪴 Quartz 4.0",
+    pageTitle: "🪴 Class Notes",
     enableSPA: true,
     enablePopovers: true,
     analytics: {
       provider: "plausible",
     },
-    baseUrl: "quartz.jzhao.xyz",
+    baseUrl: "jsilus.github.io/class-notes",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
     theme: {
@@ -20,23 +20,23 @@ const config: QuartzConfig = {
       },
       colors: {
         lightMode: {
-          light: "#faf8f8",
-          lightgray: "#e5e5e5",
-          gray: "#b8b8b8",
-          darkgray: "#4e4e4e",
-          dark: "#2b2b2b",
-          secondary: "#284b63",
-          tertiary: "#84a59d",
+          light: "#eff1f5",
+          lightgray: "#bcc0cc",
+          gray: "#9ca0b0",
+          darkgray: "#6c6f85",
+          dark: "#4c4f69",
+          secondary: "#8839ef",
+          tertiary: "#40a02b",
           highlight: "rgba(143, 159, 169, 0.15)",
         },
         darkMode: {
-          light: "#161618",
-          lightgray: "#393639",
-          gray: "#646464",
-          darkgray: "#d4d4d4",
-          dark: "#ebebec",
-          secondary: "#7b97aa",
-          tertiary: "#84a59d",
+          light: "#1e1e2e",
+          lightgray: "#45475a",
+          gray: "#6c7086",
+          darkgray: "#a6adc8",
+          dark: "#cdd6f4",
+          secondary: "#cba6f7",
+          tertiary: "#a6e3a1",
           highlight: "rgba(143, 159, 169, 0.15)",
         },
       },

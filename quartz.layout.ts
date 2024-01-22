@@ -7,7 +7,7 @@ export const sharedPageComponents: SharedLayout = {
   header: [],
   footer: Component.Footer({
     links: {
-        "Source": "https://www.github.com/jsilus/class-notes/content"
+        "Notes Text Source": "https://www.github.com/jsilus/class-notes/tree/v4/content"
     },
   }),
 }
