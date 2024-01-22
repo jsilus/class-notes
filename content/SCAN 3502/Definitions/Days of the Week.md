@@ -1,0 +1,9 @@
+| Day       | Origin |
+| --------- | ------ |
+| Sunday    | Sun    |
+| Monday    | Moon   |
+| Tuesday   | Tyr    |
+| Wednesday | Odin   |
+| Thursday  | Thor   |
+| Friday    | Frigg  |
+| Saturday  | Saturn |

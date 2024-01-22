@@ -1,0 +1,1 @@
+Cannot write any algorithm to solve

@@ -1,0 +1,1 @@
+If the rows of $A$ span $\mathbb{R}^{n}$, they form a basis of $\mathbb{R}^{n}$.

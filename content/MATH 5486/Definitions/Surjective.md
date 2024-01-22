@@ -1,0 +1,1 @@
+A function $f$ is **surjective** if, for every element $y$ of the function's codomain, there exists at least one element $x$ in the function's domain such that $f(x)=y$.
