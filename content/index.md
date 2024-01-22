@@ -15,5 +15,3 @@ title: Justin's Notes
 - CSCI 5103
 - [[MATH 5707 Homepage|MATH 5707]]
 - [[MATH 5486 Homepage|MATH 5486]]
-
-#####
