@@ -12,4 +12,4 @@
 	- Architecture support
 	- Amount of information needed by the OS
 #### What is a quantum?
-The maximum duration at which a process is allowed to run on the CPU before being replaced by another to achieve multiplexing.
+The maximum duration at which a process is allowed to run on the CPU before being replaced by another to achieve multiplexing. This length is variable for different processes.
