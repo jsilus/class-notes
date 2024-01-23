@@ -12,6 +12,6 @@ title: Justin's Notes
 **Spring 2024**
 - [[CSCI 4211 Homepage|CSCI 4211]]
 - [[CSCI 4511W Homepage|CSCI 4511W]]
-- [[CSCI 5103 Homepage|CSCI 4211]]
+- [[CSCI 5103 Homepage|CSCI 5103]]
 - [[MATH 5707 Homepage|MATH 5707]]
 - [[MATH 5486 Homepage|MATH 5486]]
