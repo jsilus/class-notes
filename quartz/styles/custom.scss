@@ -1,8 +1,8 @@
 @use "./base.scss";
 
-body:not(.popover-hint) > .page {
+body > .page {
     article {
-        &:not(.popover-hint) > h1 {
+        h1 {
             color: #f38ba8;
         }
         h2 {
