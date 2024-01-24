@@ -20,11 +20,22 @@
         h6 {
             color: #cba6f7;
         }
-        p > strong {
-            color: #cba6f7;
-        }
-        p > em {
-            color: #a6e3a1;
+
+        p,
+        ul,
+        text,
+        a,
+        tr,
+        td,
+        li,
+        ol,
+        ul {
+            & > strong {
+                color: #cba6f7;
+            }
+            & > em {
+                color: #a6e3a1;
+            }
         }
     }
 }
