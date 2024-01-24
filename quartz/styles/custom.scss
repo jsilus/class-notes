@@ -2,7 +2,7 @@
 
 body:not(.popover-hint) > .page {
     article {
-        h1 {
+        &:not(.popover-hint) > h1 {
             color: #f38ba8;
         }
         h2 {
