@@ -20,6 +20,8 @@ $T$ is a **spanning tree** of graph $G$ if
 
 **Theorem:** Any connected graph has a spanning tree. 
 *Proof:* If it is already acyclic, it is a spanning tree. If it is not, we can remove the edges that form cycles without affecting the connectedness. Once no cycles are remaining, there is a spanning tree.
+
+[[Theorem Cayley]] is for the number of possible spanning trees for a set of vertices.
 ### Minimal Spanning Trees
 Let $G$ be a graph and $f:E\rightarrow\mathbb{R}_{\ge0}$ is a weight fn.
 Problem: Find a connected subgraph $T$ of $G$ s.t. $\sum\limits_{e\in T}f(e)$ is minimal.
