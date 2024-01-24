@@ -22,6 +22,14 @@ $T$ is a **spanning tree** of graph $G$ if
 **Theorem:** Any connected graph has a spanning tree. 
 *Proof:* If it is already acyclic, it is a spanning tree. If it is not, we can remove the edges that form cycles without affecting the connectedness. Once no cycles are remaining, there is a spanning tree.
 
+
+### Minimal Spanning Trees
+
 Let $G$ be a graph and $f:E\rightarrow\mathbb{R}_{\ge0}$ is a weight fn.
 Problem: Find a connected subgraph $T$ of $G$ s.t. $\sum\limits_{e\in T}f(e)$ is minimal.
 From **CSCI 4041:** [[Kruskal]], [[Prim]].
+
+**Greedy Algorithm:**
+1) Look at all unadded edges that can be added creating no cycle
+2) Pick the edge of smallest weight
+3) Add it
