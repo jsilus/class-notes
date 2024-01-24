@@ -1,3 +1,5 @@
+Uses a stack to store nodes.
+Explores edges until there are no unexplored edges and then backtracks to find another unexplored edge. Similar to how one would solve a maze.
 ## Pseudocode
 ```pseudo
 \begin{algorithm}
@@ -40,5 +42,3 @@
 \end{algorithmic}
 \end{algorithm}
 ```
-
-Explores edges until there are no unexplored edges and then backtracks to find another unexplored edge. Similar to how one would solve a maze.

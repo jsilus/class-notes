@@ -1,3 +1,6 @@
+Uses a queue to store nodes
+Searches in a circumference in waves
+Searches expanding from a point
 ## Pseudocode
 ```pseudo
 \begin{algorithm}
@@ -29,6 +32,3 @@
 \end{algorithmic}
 \end{algorithm}
 ```
-
-Searches in a circumference in waves
-Searches expanding from a point
