@@ -13,7 +13,7 @@ Bijection: trees in $K_{n}\Leftrightarrow$ words in alphabet with $n$ letters wi
 ### Creating a code
 
 ```mermaid
-flowchart
+graph
 A((1)) --- B((8))
 B --- C((5))
 B --- D((2))
