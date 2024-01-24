@@ -18,5 +18,5 @@
 
 
 ## Homework
-[[Homework 1]]
+[[MATH 5485/Homework/Homework 1]]
 [[Homework 2]]
