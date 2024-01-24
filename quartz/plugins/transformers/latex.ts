@@ -22,7 +22,7 @@ export const Latex: QuartzTransformerPlugin<Options> = (opts?: Options) => {
       }
     },
     externalResources() {
-      if (engine === "katex") {
+      if (engine === "mathjax") {
         return {
           css: [
             // base css
