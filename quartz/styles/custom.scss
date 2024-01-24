@@ -1,28 +1,30 @@
 @use "./base.scss";
 
 .page {
-    h1 {
-        color: #f38ba8;
-    }
-    h2 {
-        color: #fab387;
-    }
-    h3 {
-        color: #a6e3a1;
-    }
-    h4 {
-        color: #94e2d5;
-    }
-    h5 {
-        color: #b4befe;
-    }
-    h6 {
-        color: #cba6f7;
-    }
-    article p > strong {
-        color: #cba6f7;
-    }
-    article p > em {
-        color: #a6e3a1;
+    article {
+        h1 {
+            color: #f38ba8;
+        }
+        h2 {
+            color: #fab387;
+        }
+        h3 {
+            color: #a6e3a1;
+        }
+        h4 {
+            color: #94e2d5;
+        }
+        h5 {
+            color: #b4befe;
+        }
+        h6 {
+            color: #cba6f7;
+        }
+        p > strong {
+            color: #cba6f7;
+        }
+        p > em {
+            color: #a6e3a1;
+        }
     }
 }
