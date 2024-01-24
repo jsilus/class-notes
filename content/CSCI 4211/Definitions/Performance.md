@@ -13,4 +13,7 @@ $d_{nodal}=d_{proc}+d_{queue}+d_{trans}+d_{prop}$
 	- time waiting at output link for transmission
 	- depends on congestion level of router
 3) transmission delay $d_{trans}$
-4) propagation delay $d_{prop}$
+	- the time to put the bits onto the wire
+1) propagation delay $d_{prop}$
+	- the time to propagate across the link
+	- depends on the distance between devices
