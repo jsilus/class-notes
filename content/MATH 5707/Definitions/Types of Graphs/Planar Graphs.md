@@ -26,6 +26,9 @@ m&\rightarrow m-1
 \end{align*}
 $$
 By inductive assumption, $n-(m-1)+(f-1)=2\Leftrightarrow n-m+f=2$.
+
+#### Euler's Characteristic
+$V-E+F=2$ works only on 2D planes. If we draw a graph on a different shape, this constant changes.
 #### Lemma 1
 **Lemma:** A planar graph with $n\ge3$ vertices has at most $m\le3n-6$ edges.
 
@@ -47,6 +50,7 @@ m+6 &\le 3n
 $$
 #### Lemma 2
 **Lemma:** If smallest cycle in planar graph has length $\ge4$, then $m\le2n-4$. Bipartite graphs must have cycles of at least $4$.
+
 ## Specific Disproofs
 **Theorem:** $K_{5}$ is not planar.
 *Proof:*
@@ -69,3 +73,5 @@ m&= 9\\
 \text{false}&\Rightarrow \text{cannot be planar}
 \end{align*}
 $$
+## Kuratowski's Theorem
+**Theorem:** A graph is planar if it does not contain $K_{5}$ or $K_{3,3}$.
