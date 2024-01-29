@@ -17,9 +17,9 @@
 ## Important Classes
 - [[Trees]] - connected and acyclic
 - Complete - all vertices have an edge to all others
-- [[Connected]] - all vertices have a path to all others
+- [[Connected Graphs|Connected]] - all vertices have a path to all others
 - Acyclic - no cycles can be formed
-- Planar - **can be** drawn on plane without crossing edges
+- [[Planar Graphs|Planar]] - **can be** drawn on plane without crossing edges
 - Directed - does not fit our class definition of graphs
 - Empty - no edges
 - Bipartite - color vertices black and white such that all edges have opposite vertices
