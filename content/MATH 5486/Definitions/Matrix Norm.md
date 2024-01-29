@@ -7,7 +7,7 @@ If $A\in\mathbb{R}^{n\times n}$, the **matrix norm** $\lVert\,\cdot\,\rVert:\mat
 5) $\lVert AB\rVert\le\lVert A\rVert\,\lVert B\rVert$ (\* different from definition of [[Vector Norm]])
 
 ## Types of Matrix Norms
-1) Matrix norm induced by vector norm
+Matrix norm induced by vector norm
 $$
 \begin{align*}
 \text{For a given vector norm }\lVert\,\cdot\,\rVert\\
@@ -20,8 +20,19 @@ $$
 \lVert A\rVert=\max_{v\ne0}\frac{\lVert Av\rVert}{\lVert v\rVert}\text{ is a matrix norm}
 $$
 
+
 $$
 \lVert A\rVert_{\infty}=\max_{v\ne0}\frac{\lVert Av\rVert_{\infty}}{\lVert v\rVert_{\infty}}=\max_{1\le i\le n}\sum\limits_{j=1}^{n}|a_{ij}|
 $$
+$$
+\lVert A\rVert_{1}=\max_{1\le j\le n}\sum\limits_{i=1}^{n}|a_{ij}|
+$$
+$$
+\lVert A\rVert_{2}=\max_{1\le i\le n}|\sigma_{i}|
+$$
+$$
+\lVert A\rVert_{F}=\sqrt{\sum\limits_{i=1}^{n}\sum\limits_{j=1}^{n}a_{ij}^{2}}=\sqrt{\text{trace}(A^{T}A)}
+$$
+
 
 
