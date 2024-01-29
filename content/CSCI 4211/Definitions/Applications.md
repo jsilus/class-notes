@@ -1,0 +1,22 @@
+- Non-Interactive Data Transfer
+	- web download/upload, ftp of file
+	- sending or retrieving of emails
+	- file sharing
+	- **Requirements:**
+		- 100% reliability
+- Interactive Text-based Applications
+	- instant messaging
+	- **Requirements:**
+		- 100% reliability
+		- short response time
+- Streaming Audio/Video
+	- internet radio
+	- **Requirements:**
+		- can tolerate some loss
+		- can tolerate some delay
+		- delay-sensitive
+- Real time / interactive audio/video
+	- **Requirements:**
+		- can tolerate some loss
+		- delay-sensitive
+

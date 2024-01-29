@@ -36,14 +36,18 @@ root -->|0| C
 root -->|0| D
 ```
 2. 
-	3. In layer 1, there are $N$ states (starting at each city). In layer 2, there are $N(N-1)$ states (for each city, move to one other city). In layer 3, there are $N(N-1)(N-2)$ (for each of the previous states, move to one other city). This continues until the $N\text{-th}$ layer, which has one choice of $N(N-1)(N-2)\cdots(N-(N-2))(N-(N-1))(N-(N-1))$. From summing these, we can create the generic equation as follows.
+	3. In layer 1, there are $N$ states (starting at each city). In layer 2, there are $N(N-1)$ states (for each city, move to one other city). In layer 3, there are $N(N-1)(N-2)$ (for each of the previous states, move to one other city). This continues until the $N\text{-th}$ layer, which has $N(N-1)(N-2)\cdots(N-(N-2))(N-(N-1))(N-(N-1))$ states. From summing these, we can create the generic equation as follows.
 $$
-S=\sum\limits_{i=0}^{N-1}\prod\limits_{j=0}^{i}(N-j)+\prod\limits_{j=0}^{N-1}(N-j)
+S=
+\begin{cases}
+\sum\limits_{i=0}^{N-1}\prod\limits_{j=0}^{i}(N-j)+\prod\limits_{j=0}^{N-1}(N-j) & N\gt1 \\
+1 & N=1
+\end{cases}
 $$
-3. c
-	1. a
-	2. b
-	3. c
+3. 
+	1. 
+	2. DFS ID
+	3. BFS
 4. d
 	1. a
 	2. b
