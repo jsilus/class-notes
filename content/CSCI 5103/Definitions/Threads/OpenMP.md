@@ -1,0 +1,6 @@
+- API for C, C++, Fortran
+	- Used for scientific computing
+- Compiler directives inserted into program
+	- Identify parts of code that can be parallelized
+	- \#pragma omp parallel
+- Compiler will parallelize code and create number of threads based on number of CPUs

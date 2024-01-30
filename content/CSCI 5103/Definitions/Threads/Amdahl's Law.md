@@ -8,3 +8,4 @@ S&= \text{serial portion of program}\\
 N&= \text{number of CPUs}
 \end{align*}
 $$
+This is normalized, so $0\le S\le1$

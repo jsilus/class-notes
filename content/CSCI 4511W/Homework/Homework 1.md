@@ -120,11 +120,11 @@ $$
 
 ## 3.
 #### 1.
-BFS
+If you are trying to limit memory use, you would use Depth First Search or its variants, Depth Limited Search or Iterative Deepening. This is because unlike the other uninformed searches, these don't need to store a frontier of visited nodes. This drastically reduces the number of nodes in memory, as all three have a linear space complexity.
 #### 2.
-ID
+If you have an idea of how many links need to be visited, a Depth Limited Search would be the most ideal. This is because we will get the benefits of Depth First Search without the potential consequence of running down a really long chain. We can put a cap on how far the algorithm will search.
 #### 3.
-BFS
+If we want a minimum length solution, this gets a little harder. 
 ## 4.
 #### 1.
 #### 2.

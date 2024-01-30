@@ -8,3 +8,17 @@ Expansion on [[Thread]] and [[Pthreads]] from 4061
 	- **Task parallelism:** Different operations executed by different threads
 	- [[Amdahl's Law]]
 
+### User vs. Kernel Threads
+- User threads are more light-weight and efficient
+	- No kernel scheduling, context-switching
+- User threads are more flexible
+	- Application-specific scheduling policy, concurrency model
+- **Blocking I/O Problem**
+	- If a single user thread blocks, the whole process blocks
+- User threads cannot exploit parallelism of multiprocessors
+- One-to-One model
+	- Each user thread gets mapped to a kernel thread
+- Many-to-Many model
+	- Multiple user threads mapped to multiple kernel threads
+
+[[OpenMP]]
