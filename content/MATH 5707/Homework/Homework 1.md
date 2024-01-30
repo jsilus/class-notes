@@ -22,7 +22,16 @@ This edge could still form a tree if $d_{k+1}$ is attached to a leaf on the old 
 Because each side implies the other, a sequence of positive integers $d_{1},\dots,d_{n}$ is a degree sequence of a tree if and only if $d_{1}+\cdots+d_{n}=2(n-1)$.
 
 ## Problem 7
+```mermaid
+flowchart
 
+a[root] --> cdh
+comms --> a
+```
 
 ## Problem 8
-Let $T$ be the minimum spanning tree calculated by our original greedy algorithm. Let $S$ be the subtree of our modified algorithm at the first step such that our greedy algorithm picks an edge that isn't connected to $S$. Then, because $T$ is a minimum spanning tree, there is exactly one edge connecting $S$ and $T\setminus S$
+Let $T$ be the minimum spanning tree calculated by our original greedy algorithm, and assume the tree calculated by our modified algorithm $T'$ is not a minimum spanning tree.
+
+Let $S$ be the subtree of our modified algorithm at the first step such that our greedy algorithm picks an edge that isn't connected to $S$. Then, because $T$ is a tree, there is exactly one edge connecting $S$ and $T\setminus S$ or $S$ and $T'\setminus S$. Let us call these edges $e$ and $e'$, respectively.
+
+Because $T$ is a minimum spanning tree, $e$ is the smallest edge connecting 
