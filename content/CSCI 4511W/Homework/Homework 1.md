@@ -124,7 +124,7 @@ If you are trying to limit memory use, you would use Depth First Search or its v
 #### 2.
 If you have an idea of how many links need to be visited, a Depth Limited Search would be the most ideal. This is because we will get the benefits of Depth First Search without the potential consequence of running down a really long chain. We can put a cap on how far the algorithm will search.
 #### 3.
-If we want a minimum length solution, this gets a little harder. 
+If we want a minimum length solution, we have three options. If all costs are equal, Iterative Deepening would be our best search method for reducing memory use. If they are not equal, we will take a huge memory hit, but Dijkstra's Algorithm or Uniform Cost Search will be the best search method that computes the optimal cost.
 ## 4.
 #### 1.
 #### 2.
