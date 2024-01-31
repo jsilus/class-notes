@@ -40,7 +40,7 @@ $$
 - [[Theorem 1]]
 - [[Theorem 2]]
 
-**Lemma:** If $\rho(T)<1$, then $(I-T)^{-1}$ exists. ([[Spectral Radius]])
+
 
 ## Iterative Method
 Start the initial point $x^{(0)}\in\mathbb{R}^{n}$

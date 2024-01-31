@@ -127,11 +127,16 @@ If you have an idea of how many links need to be visited, a Depth Limited Search
 If we want a minimum length solution, we have three options. If all costs are equal, Iterative Deepening would be our best search method for reducing memory use. If they are not equal, we will take a huge memory hit, but Dijkstra's Algorithm or Uniform Cost Search will be the best search method that computes the optimal cost.
 ## 4.
 #### 1.
+Yes. The reason we need to keep track of which nodes have been visited is in order to make sure we don't loop around into explored territory. If the graph is acyclic, it will work as normal.
 #### 2.
+It doesn't take any time to keep track of the nodes that have been explored, so this wouldn't change from the standard time.
 #### 3.
+Yes. If there are cycles and we are not keeping track of nodes, we could easily get stuck in a loop.
 ## 5.
 #### 1.
+Tree-like searches require less memory because they don't need to keep track of which nodes have been visited.
 #### 2.
+
 #### 3.
 ## 6
 https://colab.research.google.com/drive/1YSg936dO7X90sxVYAmVByhSoItFl-jpC
