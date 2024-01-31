@@ -22,5 +22,5 @@
 - [[Planar Graphs|Planar]] - **can be** drawn on plane without crossing edges
 - Directed - does not fit our class definition of graphs
 - Empty - no edges
-- Bipartite - color vertices black and white such that all edges have opposite vertices
+- [[Colored Graphs|Bitartite]] - color vertices black and white such that all edges have opposite vertices
 
