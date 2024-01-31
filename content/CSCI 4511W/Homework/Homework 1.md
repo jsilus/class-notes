@@ -136,7 +136,8 @@ Yes. If there are cycles and we are not keeping track of nodes, we could easily 
 #### 1.
 Tree-like searches require less memory because they don't need to keep track of which nodes have been visited.
 #### 2.
-
+Not necessarily. It could get stuck in an infinite chain. If this were to happen, it won't terminate regardless of if there is a solution or not.
 #### 3.
+It still could work correctly, it just might take longer if there are many cycles.
 ## 6
 https://colab.research.google.com/drive/1YSg936dO7X90sxVYAmVByhSoItFl-jpC
