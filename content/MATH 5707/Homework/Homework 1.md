@@ -19,7 +19,7 @@ This edge could still form a tree if $d_{k+1}$ is attached to a leaf on the old 
 #### Conclusion
 Because each side implies the other, a sequence of positive integers $d_{1},\dots,d_{n}$ is a degree sequence of a tree if and only if $d_{1}+\cdots+d_{n}=2(n-1)$.
 ## Problem 7
-If each vertex is numbered 
+
 ## Problem 8
 Let $T'$ be a spanning tree which is not the minimum spanning tree and is calculated by our new algorithm. Let $T$ be the minimum spanning tree calculated by our original greedy algorithm which is most similar to $T'$. Let $S$ be the subtree of our modified algorithm at the first step such that our greedy algorithm picks an edge that isn't connected to $S$.
 
