@@ -10,7 +10,7 @@ We proceed by induction.
 If $n=2$, then $d_{1}+d_{2}=2(2-1)=2$. Because $d_{1}$ and $d_{2}$ are positive, they must be $d_{1}=1$ and $d_{2}=1$. This is a tree.
 
 **Inductive Step:**
-Let us assume that $d_{1}+\cdots+d_{k}=2(k-1)$ implies that $d_{1},\dots,d_{k}$ is a degree sequence of a tree. This tree will have at least one leaf because it is acyclic.
+Let us assume that $d_{1}+\cdots+d_{k}=2(k-1)$ implies that $d_{1},\dots,d_{k}$ for some $k\ge2$ is a degree sequence of a tree. This tree will have at least one leaf because it is acyclic.
 
 Now, let us add a vertex $d_{k+1}$. By our inductive hypothesis, $d_{1}+\cdots+d_{k}+d_{k+1}=2((k+1)-1)=2k$. By the handshake theorem, this means that 1 edge was added by adding $d_{k+1}$.
 
@@ -25,7 +25,19 @@ $$
 $$
 
 We can prove this via induction.
+**Base Case:**
+If $n=2$, then $d_{1}+d_{2}=2(2-1)=2$. Because $d_{1}$ and $d_{2}$ are positive, they must be $d_{1}=1$ and $d_{2}=1$. This makes our equation:
+$$
+\frac{(2-2)!}{(1-1)!(1-1)!}=\frac{0!}{0!0!}=1
+$$
+This makes sense, as the only tree with two vertices is where each is connected to the other.
 
+**Inductive Step:**
+Let us assume that the equation holds for $n=k$ for some $k\ge2$. We show that it will hold for $n=k+1$. Then, by our equation the number of trees for $k+1$ integers in the degree sequence should be
+
+$$
+\frac{(k-1)!}{(d_{1}-1)!(d_{2}-1)!\cdots(d_{k}-1)!(d_{k+1}-1)!}=
+$$
 ## Problem 8
 Let $T'$ be a spanning tree which is not the minimum spanning tree and is calculated by our new algorithm. Let $T$ be the minimum spanning tree calculated by our original greedy algorithm which is most similar to $T'$. Let $S$ be the subtree of our modified algorithm at the first step such that our greedy algorithm picks an edge that isn't connected to $S$.
 
