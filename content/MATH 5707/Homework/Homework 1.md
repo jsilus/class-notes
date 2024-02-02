@@ -19,6 +19,12 @@ This edge could still form a tree if $d_{k+1}$ is attached to a leaf on the old 
 #### Conclusion
 Because each side implies the other, a sequence of positive integers $d_{1},\dots,d_{n}$ is a degree sequence of a tree if and only if $d_{1}+\cdots+d_{n}=2(n-1)$.
 ## Problem 7
+We can encode our degree sequence as a Prüfer Code and then count how many different variations exist, as all would form a valid tree. First, we know that the length of the code is $n-2$. Then, we know that each vertex $i$ shows up $d_{i}-1$ times in the sequence. This corresponds to the multinomial coefficient, so the number of trees is:
+$$
+{{n-2}\choose{d_{1}-1,d_{2}-1,\dots,d_{n}-1}}=\frac{(n-2)!}{(d_{1}-1)!(d_{2}-1)!\cdots(d_{n}-1)!}
+$$
+
+We can prove this via induction.
 
 ## Problem 8
 Let $T'$ be a spanning tree which is not the minimum spanning tree and is calculated by our new algorithm. Let $T$ be the minimum spanning tree calculated by our original greedy algorithm which is most similar to $T'$. Let $S$ be the subtree of our modified algorithm at the first step such that our greedy algorithm picks an edge that isn't connected to $S$.

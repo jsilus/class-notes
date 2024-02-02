@@ -131,13 +131,13 @@ Yes. The reason we need to keep track of which nodes have been visited is in ord
 #### 2.
 It doesn't take any time to keep track of the nodes that have been explored, so this wouldn't change from the standard time.
 #### 3.
-Yes. If there are cycles and we are not keeping track of nodes, we could easily get stuck in a loop.
+Yes. If there are cycles and we are not keeping track of nodes, we could easily get stuck in a loop if the values of the loop are relatively small compared to the rest of the graph.
 ## 5.
 #### 1.
 Tree-like searches require less memory because they don't need to keep track of which nodes have been visited.
 #### 2.
 Not necessarily. It could get stuck in an infinite chain. If this were to happen, it won't terminate regardless of if there is a solution or not.
 #### 3.
-It still could work correctly, it just might take longer if there are many cycles.
+It still could work correctly, it just might take longer if there are many cycles, as it is likely that we will go down them many times.
 ## 6
 https://colab.research.google.com/drive/1YSg936dO7X90sxVYAmVByhSoItFl-jpC
