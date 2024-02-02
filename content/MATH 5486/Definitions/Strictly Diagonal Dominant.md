@@ -1,0 +1,1 @@
+If $A_{ii}>\sum\limits_{j\ne i}|a_{ij}|$, then $A$ is **strictly diagonal dominant**.
