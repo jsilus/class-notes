@@ -1,6 +1,7 @@
 Graphs where the vertices are colored such that no vertex with a color is connected to a vertex of the same color.
 Number of colors needed for a graph is **chromatic number** $\chi(G)$ or $\gamma(G)$.
 The **clique number** $\omega(G)$ represents the maximum number of vertices in a graph $G$ that are in a group such that any two vertices are adjacent for all vertices.
+The **chromatic polynomial** $p_{G}(x)$ is the number of ways to properly color graph $G$ with $x$ colors.
 
 $\chi(G)=2\quad\rightarrow$ **bipartite** 
 $1\le\chi(G)\le n$
@@ -34,3 +35,18 @@ Induction: remove such vertex. Color the rest. Add it back.
 $G$ has a vertex $x$ of degree 5. Color $H=G\setminus\{x\}$ with 5 colors. $x_{i}$ has color $i$ for all $x_{i},i$. Number the vertices around $x$ clockwise as $x_{1},\dots,x_{5}$.
 
 Let $H(i,j)$ be a subgraph of $H$ vertices of colors $i,j$. Pick $H(1,3)$. If there are multiple connected components, flip the colors in one of them. This graph is still colored properly. $x$ now has the color that has been freed. If there is one connected component, pick $H(2,4)$. Flip if possible. If not, $x_{1}$ connected to $x_{3}$ and $x_{2}$ connected to $x_{4}$ means this graph cannot be planar. This is a contradiction.
+
+## Other Theorems
+**Theorem:** Let $d\ge3$, $G$ is a graph with all degrees $\ge d$, and no $K_{d+1}$ subgraph. Then, $\chi(G)\le d$.
+
+*Proof:* Let $G$ be a counterexample with minimum number of vertices. Let $x\in G$, let $\{x_{1},x_{2},\dots,x_{l}\}$ be its neighbors where $l\le d$.
+
+If $l<d$, remove $x$. The remaining $H$ is $d$-colorable. We can then add $x$ back.
+
+If $l=d$, assume $x_{i}$ has color $i$. Restrict $H$ to colors $i$ and $j$, call this $H_{ij}$.
+**Claim:** $x_{i}$ and $x_{j}$ are in the same connected component of $H_{ij}$. If not, take some component of $x_{i}$, swap colors $i,j$. $H_{ij}$ must be a path.
+
+#### Deletion Contraction Relation
+**Claim:** $p_{G'}(x)=p_{G}(x)-p_{G''}(x)$ where $G$ is a graph with two vertices $v,w$ with no edge between them, $G'$ has an edge between them, and $G''$ has $v=w$.
+
+**Theorem:** Let $H$ be a graph with $n\ge1$ vertices, $m$ edges, and $k$ connected components. Then, $p_{H}(x)=\sum\limits_{i=0}^{n-k}(-1)^{i}a_{i}x^{n-i}$ where $a_{0}=1,a_{1}=m,a_{i}$-s are positive integers.
