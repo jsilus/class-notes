@@ -55,3 +55,25 @@ $$
 ###### II
 It will be received over the next 0.002 seconds, so at time $\boxed{0.004\,\text{ s}}$
 #### c.
+For this problem, all we are considering is the transmission delay,  which is equal to $\frac{L}{R}$. If we want to do that over multiple links, equation 1.1 makes sense. If we are generalizing it with the number of packets, we must consider that multiple links can be utilized at once.
+$$ 
+\begin{align*}
+d_{\text{end-to-end}}&= (N+P)*\frac{L}{R}\\
+\text{where}\\
+N&\text{ is the number of links}\\
+P&\text{ is the number of packets}\\
+R&\text{ is the transmission rate}\\
+L&\text{ is the length of the message}
+\end{align*}
+$$
+We still need to send all of the packets, so we multiply it by $N+P$ instead. It takes $N$ links to get the first packet across, but because they are all being sent continuously, it will be a constant stream of data after that first packet. Then, we only need to consider the number of packets $P$.
+#### d.
+Using this equation, it would take
+$$
+d_{\text{end-to-end}}=(3+100)\frac{10\,\text{ Kb}}{5000\,\text{ Kbps}}=\boxed{0.206\,\text{ s}}
+$$
+This is about three times faster than our original value of 0.6 seconds.
+#### e.
+If we lose a packet, we lose much less information that needs to be recovered. Also, we get the first packet quicker, so we can start loading information much earlier if its formatted well.
+#### f.
+Packets could show up out of order or be missing, so the receiving application needs to be able to handle this. Additionally, each of the lower layer's headers would need to be added on for each packet, so at higher layers it might be much more data sent.
