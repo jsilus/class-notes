@@ -1,0 +1,2 @@
+- Group together threads and applications in a tree
+- Divide parent's CPU service proportionately among children

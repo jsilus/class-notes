@@ -1,0 +1,1 @@
+- Schedules the shortest job on the CPU
