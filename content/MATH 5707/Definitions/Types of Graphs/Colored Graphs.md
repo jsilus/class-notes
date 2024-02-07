@@ -50,3 +50,10 @@ If $l=d$, assume $x_{i}$ has color $i$. Restrict $H$ to colors $i$ and $j$, call
 **Claim:** $p_{G'}(x)=p_{G}(x)-p_{G''}(x)$ where $G$ is a graph with two vertices $v,w$ with no edge between them, $G'$ has an edge between them, and $G''$ has $v=w$.
 
 **Theorem:** Let $H$ be a graph with $n\ge1$ vertices, $m$ edges, and $k$ connected components. Then, $p_{H}(x)=\sum\limits_{i=0}^{n-k}(-1)^{i}a_{i}x^{n-i}$ where $a_{0}=1,a_{1}=m,a_{i}$-s are positive integers.
+
+*Proof:* Induction on $n+m$. Base case $n+m=1$ trivial.
+**Inductive Step:** $m=0\Rightarrow p_{H}=x^{n}$
+$m>0\Rightarrow$ pick an edge $ab$. Take $G=H-ab$, $G''=H/ab$. 
+$p_{G}(x)=x^{n}-(m-1)x^{n-1}+\sum\limits_{i=2}^{n-k}(-1)^{i}b_{i}x^{n-i}$
+$p_{G''}(x)=x^{n-1}-\sum\limits_{i=2}^{n-k}(-1)^{i}c_{i}x^{n-i}$
+$p_{H}=p_{G}-p_{G''}=x^{n}-mx^{n-1}+\sum\limits_{i=2}^{n-k}(-1)^{i}(b_{i}+c_{i})x^{n-i}$
