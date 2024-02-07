@@ -57,3 +57,4 @@ $m>0\Rightarrow$ pick an edge $ab$. Take $G=H-ab$, $G''=H/ab$.
 $p_{G}(x)=x^{n}-(m-1)x^{n-1}+\sum\limits_{i=2}^{n-k}(-1)^{i}b_{i}x^{n-i}$
 $p_{G''}(x)=x^{n-1}-\sum\limits_{i=2}^{n-k}(-1)^{i}c_{i}x^{n-i}$
 $p_{H}=p_{G}-p_{G''}=x^{n}-mx^{n-1}+\sum\limits_{i=2}^{n-k}(-1)^{i}(b_{i}+c_{i})x^{n-i}$
+**Theorem:** $p_H(x)=\sum\limits_{i=0}^{n-1}(-1)^ia_ix^{n-i}$ where $a_i$ is the number of $i$-subsets of $E$.
