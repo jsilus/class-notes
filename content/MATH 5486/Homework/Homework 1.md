@@ -51,13 +51,13 @@ This shows equality.
 Assume that there is more than one solution. We will call two of these $L_{1}$ and $L_{2}$, such that 
 $$
 \begin{align*}
-A&= L_{1}L_{1}^{T}\\
-A&= L_{2}L_{2}^{T}\\
+A&= L_{1}L_{1}^{\top}\\
+A&= L_{2}L_{2}^{\top}\\
 L_{1}&\ne L_{2}
 \end{align*}
 $$
 $$
-A=LL^{T}=
+A=LL^{\top}=
 \begin{bmatrix}
 l_{11} & 0 & \cdots & 0 \\ 
 l_{21} & l_{22} & \cdots & 0 \\ 
@@ -91,7 +91,9 @@ a_{2j}&= l_{21}l_{j1}+l_{22}l_{j2}\\\\
 $$
 ## 4.
 #### a.
-For simplicity of writing, we will say $U^{-1}=V$. 
+$$
+
+$$
 #### b.
 
 ## 5.

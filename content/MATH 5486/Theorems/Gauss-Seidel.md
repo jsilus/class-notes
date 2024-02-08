@@ -1,3 +1,8 @@
+$$
+r_{ii}^{(k)}=b_{i}-\sum_{j=1}^{i-1}a_{ij}x_{j}^{(k)}-\sum_{j=i+1}^{n}a_{ij}x_{j}^{(k-1)}-a_{ii}x_{i}^{(k-1)}
+$$
+
+
 
 $$
 \begin{align*}
@@ -9,3 +14,4 @@ Dx^{(k)}&= b-Lx^{(k)}-Ux^{(k-1)}\\
 (\text{GS})\qquad x^{(k)}&= -(D+L)^{-1}Ux^{(k-1)}+(D+L)^{-1}b
 \end{align*}
 $$
+
