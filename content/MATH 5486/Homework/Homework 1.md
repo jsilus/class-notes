@@ -38,64 +38,74 @@ Because $\exists i,1\le i\le n\,\,\,\text{s.t.}\,\,\,x_{i}\ne y_{i}$, at least o
 Because for any nonzero matrix $A$, $AA^{-1}=I$, we can simply multiply on the left hand side for this. 
 $$
 \begin{align*}
-(AB)^{-1}&= B^{-1}A^{-1}\\
-B(AB)^{-1}&= BB^{-1}A^{-1}\\
-&= IA^{-1}\\
-&= A^{-1}\\
-(AB)(AB)^{-1}&= AA^{-1}\\
+(AB)^{-1}&\overset{ ? }{ = } B^{-1}A^{-1}\\
+B(AB)^{-1}&=BB^{-1}A^{-1}\\
+&=IA^{-1}\\
+&=A^{-1}\\
+(AB)(AB)^{-1}&=AA^{-1}\\
 I&= I
 \end{align*}
 $$
 This shows equality.
 ## 3.
-Assume that there is more than one solution. We will call two of these $L_{1}$ and $L_{2}$, such that 
-$$
-\begin{align*}
-A&= L_{1}L_{1}^{\top}\\
-A&= L_{2}L_{2}^{\top}\\
-L_{1}&\ne L_{2}
-\end{align*}
-$$
-$$
-A=LL^{\top}=
-\begin{bmatrix}
-l_{11} & 0 & \cdots & 0 \\ 
-l_{21} & l_{22} & \cdots & 0 \\ 
-\vdots & \vdots & \ddots & \vdots \\ 
-l_{n1} & l_{n2} & \cdots & l_{nn}
-\end{bmatrix}
-\begin{bmatrix}
-l_{11} & l_{21} & \cdots & l_{n1} \\ 
-0 & l_{22} & \cdots & l_{n2} \\ 
-\vdots & \vdots & \ddots & \vdots \\ 
-0 & 0 & \cdots & l_{nn}
-\end{bmatrix}
-=
-\begin{bmatrix}
-a_{11} & a_{12} & \cdots & a_{1n} \\ 
-a_{21} & a_{22} & \cdots & a_{2n} \\ 
-\vdots & \vdots & \ddots & \vdots \\ 
-a_{n1} & a_{n2} & \cdots & a_{nn}
-\end{bmatrix}
-$$
-Here, we can notice a pattern
-$$
-\begin{align*}
-a_{11}&= l_{11}^{2}\\
-a_{1j}&= l_{11}l_{j1}\\\\
-a_{21}&= l_{21}l_{11}\\
-a_{22}&= l_{21}^{2}l_{22}^{2}\\
-a_{2j}&= l_{21}l_{j1}+l_{22}l_{j2}\\\\
+Let us assume that two lower triangle matrices exist $L_{1}$ and $L_{2}$ such that $A=L_{1}L_{1}^{\top}=L_{2}L_{2}^{\top}$. Then,
 
-\end{align*}
 $$
+\begin{align}
+L_{1}L_{1}^{\top}&=L_{2}L_{2}^{\top} \\
+L_{1}^{-1}L_{1}L_{1}^{\top}(L_{1}^{\top})^{-1} & =L_{1}^{-1}L_{2}L_{2}^{\top}(L_{1}^{\top})^{-1} \\
+I & =L_{1}^{-1}L_{2}L_{2}^{\top}(L_{1}^{\top})^{-1} \\
+I & =L_{1}^{-1}L_{2}(L_{1}^{-1}L_{2})^{\top}
+\end{align}
+$$
+Because $L_{1}$ and $L_{2}$ are lower triangular matrices, their inverses are, and so is $L_{1}^{-1}L_{2}$. Then, the bottom equation can only be true if $L_{1}^{-1}L_{2}=I$, which is equivalent to saying $L_{1}=L_{2}$.
 ## 4.
 #### a.
+If $U$ is an $n\times n$ matrix, we can attach an $n\times n$ identity matrix to it, reduce it, and then the right hand side will be the inverse. This is illustrated below
+$$
+\begin{align}
+\left[
+\begin{array}{c:c}
+U & I
+\end{array}
+\right]
+=
+&\left[
+\begin{array}{c c c c : c c c c}
+u_{11} & u_{12} & \cdots & u_{1n} & 1 & 0 & \cdots & 0 \\
+0 & u_{22} & \cdots & u_{2n} & 0 & 1 & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & u_{nn} & 0 & 0 & \cdots & 1
+\end{array}
+\right] \\ \\
+\overset{ \text{RREF} }{ \leadsto }
+&\left[ 
+\begin{array}{c c c c : c c c c}
+1 & 0 & \cdots & 0 & u'_{11} & u'_{12} & \cdots & u'_{1n} \\
+0 & 1 & \cdots & 0 & 0 & u'_{22} & \cdots & u'_{2n} \\
+\vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & 1 & 0 & 0 & \cdots & u'_{nn}
+\end{array}
+\right]
+=
+\left[
+\begin{array}{c:c}
+I & \boxed{U^{-1}}
+\end{array}
+\right]
+\end{align}
 $$
 
-$$
 #### b.
-
+This will be the same process for the unit lower triangle matrix. If the matrix is $n\times n$, clearing out the first column will take $n-1$ multiplications for the $L$ matrix and $n-1$ multiplications for the $I$ matrix for a total of $2n-2$ multiplications. The second column will take $2n-4$ multiplications, as there is one fewer row. This pattern continues until we no longer need to multiply. Because this is a unit triangle matrix, we don't need to worry about the diagonal at all. This can be used to create the following equation
+$$
+\begin{align}
+&\quad\sum_{ i = 1 }^{n} (2n-2i) \\
+&=2n^{2}-2\sum_{ i = 1 }^{n} i \\
+&=2n^{2}-n^{2}-n \\
+&=\boxed{n^{2}-n\quad\text{multiplications}}
+\end{align}
+$$
 ## 5.
 #### Method 1
 We can calculate $U$ easily with Gaussian elimination.
@@ -273,74 +283,83 @@ L=
 $$
 With these matrices, $PA=LU$.
 ## 6
-
+#### Code (Matlab)
 ```m
-A=[3.3330,15920,10.333,7953;2.2220,16.710,9.6120,0.965;-1.5611,5.1792,-1.6855,2.714]
+A = [3.3330,15920,10.333,7953;2.2220,16.710,9.6120,0.965;-1.5611,5.1792,-1.6855,2.714]
+
 A = spp(A)
 A = reduce(A)
 A(:,4)
+
 function A = pivot_row(A,i)
-	max_val = -inf;
-max_row = -inf;
-for j = i:height(A)
-
-val = abs(A(i,j)) ./ sum(A(j,:));
-
-if val > max_val
-
-max_val = val;
-
-max_row = j;
-
-end
-
-end
-
-A([i max_row],:) = A([max_row i],:);
-
+    max_val = -inf;
+    max_row = -inf;
+    for j = i:height(A)
+        val = abs(A(i,j)) ./ sum(A(j,:));
+        if val > max_val
+            max_val = val;
+            max_row = j;
+        end
+    end
+    A([i max_row],:) = A([max_row i],:);
 end
 
 function A = eliminate_column(A,j)
-
-for i = (j+1):height(A)
-
-c = - A(i,j) ./ A(j,j);
-
-A(i,:) = A(i,:) + c * A(j,:);
-
-end
-
+    for i = (j+1):height(A)
+        c = - A(i,j) ./ A(j,j);
+        A(i,:) = A(i,:) + c * A(j,:);
+    end
 end
 
 function A = spp(A)
-
-for i = 1:height(A)
-
-A = pivot_row(A,i);
-
-A = eliminate_column(A,i);
-
-end
-
+    for i = 1:height(A)
+        A = pivot_row(A,i);
+        A = eliminate_column(A,i);
+    end
 end
 
 function A = reduce(A)
-
-for j = height(A):-1:1
-
-for i = (j-1):-1:1
-
-c = - A(i,j) ./ A(j,j);
-
-A(i,:) = A(i,:) + c * A(j,:);
-
+    for j = height(A):-1:1
+        for i = (j-1):-1:1
+            c = - A(i,j) ./ A(j,j);
+            A(i,:) = A(i,:) + c * A(j,:);
+        end
+        c = 1 ./ A(j,j);
+        A(j,:) = c * A(j,:);
+    end
 end
+```
 
-c = 1 ./ A(j,j);
+#### Results
+```
+A =
 
-A(j,:) = c * A(j,:);
+   1.0e+04 *
 
-end
+    0.0003    1.5920    0.0010    0.7953
+    0.0002    0.0017    0.0010    0.0001
+   -0.0002    0.0005   -0.0002    0.0003
 
-end
+
+A =
+
+   1.0e+04 *
+
+    0.0002    0.0017    0.0010    0.0001
+         0    1.5895   -0.0004    0.7952
+         0         0    0.0005   -0.0005
+
+
+A =
+
+    1.0000         0         0    1.0000
+         0    1.0000         0    0.5000
+         0         0    1.0000   -1.0000
+
+
+ans =
+
+    1.0000
+    0.5000
+   -1.0000
 ```

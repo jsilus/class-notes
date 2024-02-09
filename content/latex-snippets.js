@@ -21,8 +21,8 @@
     {trigger: "B", replacement: "\\boxed{${VISUAL}}", options: "mA", description: "Box selection"},
 	{trigger: "U", replacement: "\\underbrace{ ${VISUAL} }_{ $0 }", options: "mA"},
 	{trigger: "O", replacement: "\\overbrace{ ${VISUAL} }^{ $0 }", options: "mA"},
-	{trigger: "J", replacement: "\\overset{ $0 }{ ${VISUAL} }", options: "mA"},
-	{trigger: "K", replacement: "\\underset{ $0 }{ ${VISUAL} }", options: "mA"},
+	{trigger: "K", replacement: "\\overset{ $0 }{ ${VISUAL} }", options: "mA"},
+	{trigger: "J", replacement: "\\underset{ $0 }{ ${VISUAL} }", options: "mA"},
 	{trigger: "X", replacement: "\\cancel{ ${VISUAL} }", options: "mA"},
 	{trigger: "Z", replacement: "\\cancelto{ $0 }{ ${VISUAL} }", options: "mA"},
 	{trigger: "S", replacement: "\\sqrt{ ${VISUAL} }", options: "mA"},
@@ -243,6 +243,7 @@
 
 	// Misc
     {trigger: "([^'])\\b((?![aAIieg])[a-zA-Z])\\b([\\n\\s\\.,])", replacement: "[[0]]$[[1]]$[[2]]", options: "rtA", description: "Automatically treat lone characters as math (except a, A, I)"},
+    {trigger: "([^'])\\b(${GREEK})\\b([\\n\\s\\.,])", replacement: "[[0]]$\\[[1]]$[[2]]", options: "rtA", description: "Automatically convert greek characters to their symbols"},
     {trigger: "clr", replacement: "\\color{${0:white}}$1", options: "mA", description: "Control math mode color"},
 	{trigger: "tayl", replacement: "${0:f}(${1:x} + ${2:h}) = ${0:f}(${1:x}) + ${0:f}'(${1:x})${2:h} + ${0:f}''(${1:x}) \\frac{${2:h}^{2}}{2!} + \\dots$3", options: "mA"},
     {trigger: "eval", replacement: "\\biggr|_{${0:x}=$1}$2", options: "mA"},
@@ -262,7 +263,7 @@
 		let output = arr.map(el => el.join(" & ")).join(" \\\\\n");
 		output = `\\begin{bmatrix}\n${output}\n\\end{bmatrix}`;
 		return output;
-	}, options: "m", description: "N x N identity matrix"},
+	}, options: "M", description: "N x N identity matrix"},
 
 	{trigger: /U_{(\d+)}/, replacement: (match) => {
 		const n = match[1];
@@ -284,7 +285,7 @@
 		let output = arr.map(el => el.join(" & ")).join(" \\\\\n");
 		output = `\\begin{bmatrix}\n${output}\n\\end{bmatrix}\$${ind}`;
 		return output;
-	}, options: "m", description: "N x N upper triangular matrix"},
+	}, options: "M", description: "N x N upper triangular matrix"},
 
 	{trigger: /L_{(\d+)}/, replacement: (match) => {
 		const n = match[1];
@@ -306,7 +307,7 @@
 		let output = arr.map(el => el.join(" & ")).join(" \\\\\n");
 		output = `\\begin{bmatrix}\n${output}\n\\end{bmatrix}\$${ind}`;
 		return output;
-	}, options: "m", description: "N x N lower triangular matrix"},
+	}, options: "M", description: "N x N lower triangular matrix"},
 
 	{trigger: /D_{(\d+)}/, replacement: (match) => {
 		const n = match[1];
@@ -328,5 +329,5 @@
 		let output = arr.map(el => el.join(" & ")).join(" \\\\\n");
 		output = `\\begin{bmatrix}\n${output}\n\\end{bmatrix}\$${ind}`;
 		return output;
-	}, options: "m", description: "N x N diagonal matrix"},
+	}, options: "M", description: "N x N diagonal matrix"},
 ]
