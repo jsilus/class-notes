@@ -2,6 +2,7 @@
 	// Math mode
     {trigger: "$", replacement: "$$0$", options: "tA"},
     {trigger: "$", replacement: "$\n$0\n$", options: "mA"},
+    {trigger: "([^'])\\b([a-zA-Z])\\b=", replacement: "[[0]]$[[1]]=$0$", options: "rtA", description: "Automatically enter inline math mode with <letter>="},
 
 	// Environments
 	{trigger: "beg", replacement: "\\begin{$0}\n$1\n\\end{$0}", options: "mA"},
@@ -130,10 +131,11 @@
 	{trigger: "<<", replacement: "\\ll", options: "mA"},
 	{trigger: "~~", replacement: "\\sim", options: "mA"},
 	{trigger: "\\sim~", replacement: "\\approx", options: "mA"},
-    {trigger: "vand", replacement: "\\wedge ", options: "mA"},
-    {trigger: "vorr", replacement: "\\vee ", options: "mA"},
-    {trigger: "Vand", replacement: "\\bigwedge ", options: "mA"},
-    {trigger: "Vorr", replacement: "\\bigvee ", options: "mA"},
+    {trigger: "vand", replacement: "\\wedge", options: "mA"},
+    {trigger: "vorr", replacement: "\\vee", options: "mA"},
+    {trigger: "Vand", replacement: "\\bigwedge", options: "mA"},
+    {trigger: "Vorr", replacement: "\\bigvee", options: "mA"},
+	{trigger: "\\\\(neq|geq|leq|gg|ll|sim|approx|wedge|vee|bigwedge|bigvee)([A-Za-z])", replacement: "\\[[0]] [[1]]", options: "rmA"},
 
     // Arrows
 	{trigger: "<-", replacement: "\\leftarrow ", options: "mA"},
