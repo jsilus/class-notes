@@ -131,6 +131,8 @@
 	{trigger: "<<", replacement: "\\ll", options: "mA"},
 	{trigger: "~~", replacement: "\\sim", options: "mA"},
 	{trigger: "\\sim~", replacement: "\\approx", options: "mA"},
+	{trigger: "\\sim=", replacement: "\\simeq", options: "mA"},
+	{trigger: "\\sim<", replacement: "\\lesssim", options: "mA"},
     {trigger: "vand", replacement: "\\wedge", options: "mA"},
     {trigger: "vorr", replacement: "\\vee", options: "mA"},
     {trigger: "Vand", replacement: "\\bigwedge", options: "mA"},

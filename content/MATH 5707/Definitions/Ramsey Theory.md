@@ -26,3 +26,13 @@ $$
 There are 6 people. Any two either know each other or don't.
 
 **Claim:** There are either 3 people who know each other or 3 people who do not know each other.
+
+
+**Problem:** Five distinct numbers in a row $a_{1},a_{2},a_{3},a_{4},a_{5}$.
+*Prove:* Either there is an increasing or decreasing subsequence of length 3.
+
+**Erdös Theorem:** Let $a_{1},\dots,a_{mn+1}$ be a sequence of distinct numbers. Then, either $\exists$ an increasing subsequence of length $n+1$ or $\exists$ a decreasing subsequence of length $m+1$.
+*Proof:* Write above each number the length of longest increasing subsequence starting with this number.
+
+**Theorem:** $R(s,s)\geq2^{s/2}$.
+*Proof:* Color edges randomly. Each particular coloring gets probability $\frac{1}{2^{n\choose2}}$. Pick subgraph $K_{s}$
