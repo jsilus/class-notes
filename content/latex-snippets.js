@@ -2,7 +2,10 @@
 	// Math mode
     {trigger: "$", replacement: "$$0$", options: "tA"},
     {trigger: "$", replacement: "$\n$0\n$", options: "mA"},
-    {trigger: "([^'])\\b([a-zA-Z])\\b=", replacement: "[[0]]$[[1]]=$0$", options: "rtA", description: "Automatically enter inline math mode with <letter>="},
+    {trigger: "([^'])\\b([a-zA-Z])\\b([=+-/])", replacement: "[[0]]$[[1]][[2]]$0$", options: "rtA", description: "Automatically enter inline math mode with <letter><symbol>", priority: -1},
+    {trigger: "([^'])\\b([a-zA-Z])([_^])", replacement: "[[0]]$[[1]][[2]]{$0}$1$", options: "rtA", description: "Automatically enter inline math mode with <letter><symbol>", priority: -1},
+	{trigger: "EE", replacement: "$\\exists$", options: "tA", priority: 1},
+	{trigger: "AA", replacement: "$\\forall$", options: "tA", priority: 1},
 
 	// Environments
 	{trigger: "beg", replacement: "\\begin{$0}\n$1\n\\end{$0}", options: "mA"},
@@ -74,7 +77,7 @@
 	{trigger: "([a-zA-Z])bar", replacement: "\\bar{[[0]]}", options: "rmA"},
 	{trigger: "([a-zA-Z])hat", replacement: "\\hat{[[0]]}", options: "rmA"},
 	{trigger: "([a-zA-Z])ddot", replacement: "\\ddot{[[0]]}", options: "rmA", priority: 3},
-	{trigger: "([a-zA-Z])dot", replacement: "\\dot{[[0]]}", options: "rmA", priority: 1},
+	{trigger: "([a-bd-zA-Z])dot", replacement: "\\dot{[[0]]}", options: "rmA", priority: 1},
 	{trigger: "([a-zA-Z])vec", replacement: "\\vec{[[0]]}", options: "rmA"},
 	{trigger: "([a-zA-Z])tilde", replacement: "\\tilde{[[0]]}", options: "rmA"},
 	{trigger: "([a-zA-Z])und", replacement: "\\underline{[[0]]}", options: "rmA"},
@@ -83,14 +86,14 @@
 	{trigger: "box", replacement: "\\boxed{$0}$1", options: "mA"},
 	{trigger: "dot", replacement: "\\dot{$0}$1", options: "mA"},
 	{trigger: "ddot", replacement: "\\ddot{$0}$1", options: "mA", priority: 2},
-	{trigger: "cdot", replacement: "\\cdot", options: "mA", priority: 2},
 	{trigger: "vec", replacement: "\\vec{$0}$1", options: "mA"},
 	{trigger: "tilde", replacement: "\\tilde{$0}$1", options: "mA"},
 	{trigger: "und", replacement: "\\underline{$0}$1", options: "mA"},
     {trigger: "Vec", replacement: "\\{${0:x}_{1},${0:x}_{2},\\dots,${0:x}_{${1:n}}\\}$2", options: "mA"},
 
 	// Operations
-	{trigger: "txt|text", replacement: "\\text{$0}", options: "rmA", priority: -1},
+	{trigger: "txt", replacement: "\\text{$0}$1", options: "mA", priority: -1},
+    {trigger: "([^\\\\])text", replacement: "[[0]]\\text{$0}$1", options: "rmA"},
 	{trigger: "stxt|stext", replacement: "_\\text{$0}", options: "rmA"},
 	{trigger: "^", replacement: "^{$0}$1", options: "mA"},
 	{trigger: "_", replacement: "_{$0}$1", options: "mA"},
@@ -100,28 +103,28 @@
 	{trigger: "trans", replacement: "^{\\top}", options: "mA"},
 	{trigger: "invs", replacement: "^{-1}", options: "mA"},
 	{trigger: "trace", replacement: "\\operatorname{Tr}", options: "mA"},
-	{trigger: "det", replacement: "\\det", options: "mA"},
-    {trigger: "max", replacement: "\\max", options: "mA", priority: -1},
-    {trigger: "\\\\max([A-Za-z])", replacement: "\\max [[0]]", options: "rmA"},
     {trigger: "argmax", replacement: "\\operatorname{argmax}", options: "mA", priority: -1},
     {trigger: "\\operatorname{argmax}_", replacement: "\\underset{$0}{\\operatorname{argmax}}$1", options: "mA"},
-    {trigger: "min", replacement: "\\min", options: "mA", priority: -1},
-    {trigger: "\\\\min([A-Za-z])", replacement: "\\min [[0]]", options: "rmA"},
     {trigger: "argmin", replacement: "\\operatorname{argmin}", options: "mA", priority: -1},
     {trigger: "\\operatorname{argmin}_", replacement: "\\underset{$0}{\\operatorname{argmin}}$1", options: "mA"},
-	{trigger: "\\\\(times|implies)([A-Za-z])", replacement: "\\[[0]] [[1]]", options: "rmA", description: "Add space after greek letters"},
+	{trigger: "([^\\\\])(det|max|min)([A-Za-z])", replacement: "[[0]]\\[[1]]", options: "rmA"},
+	{trigger: "\\\\(det|max|min)([A-Za-z])", replacement: "\\[[0]] [[1]]", options: "rmA"},
 
 	{trigger: "([a-zA-Z]),\\.", replacement: "\\mathbf{[[0]]}", options: "rmA"},
 	{trigger: "([a-zA-Z])\\.,", replacement: "\\mathbf{[[0]]}", options: "rmA"},
+
+    // Auto subscript numbers
 	{trigger: "([A-Za-z])(\\d)", replacement: "[[0]]_{[[1]]}", options: "rmA", description: "Auto letter subscript", priority: -1},
 	{trigger: "([A-Za-z])_{(\\d+)}(\\d)", replacement: "[[0]]_{[[1]][[2]]}", options: "rmA"},
 	{trigger: "\\hat{([A-Za-z])}(\\d)", replacement: "hat{[[0]]}_{[[1]]}", options: "rmA"},
 	{trigger: "\\\\mathbf{([A-Za-z])}(\\d)", replacement: "\\mathbf{[[0]]}_{[[1]]}", options: "rmA"},
 	{trigger: "\\\\vec{([A-Za-z])}(\\d)", replacement: "\\vec{[[0]]}_{[[1]]}", options: "rmA"},
 
+    // Trig
 	{trigger: "([^\\\\])(arcsin|arccos|arctan|arccot|arccsc|arcsec|sin|cos|tan|cot|csc|sec)", replacement: "[[0]]\\[[1]]", options: "rmA"},
 	{trigger: "\\\\(arcsin|arccos|arctan|arccot|arccsc|arcsec|sin|cos|tan|cot|csc|sec)([A-Za-gi-z])", replacement: "\\[[0]] [[1]]", options: "rmA"},
 	{trigger: "\\\\(arcsinh|arccosh|arctanh|arccoth|arcsch|arcsech|sinh|cosh|tanh|coth|csch|sech)([A-Za-z])", replacement: "\\[[0]] [[1]]", options: "rmA"},
+	{trigger: "\\\\(arcsinh|arccosh|arctanh|arccoth|arcsch|arcsech|sinh|cosh|tanh|coth|csch|sech)([0-9])", replacement: "\\[[0]][[1]]", options: "rmA"},
 
     // Logic
 	{trigger: "!=", replacement: "\\neq ", options: "mA"},
@@ -137,7 +140,9 @@
     {trigger: "vorr", replacement: "\\vee", options: "mA"},
     {trigger: "Vand", replacement: "\\bigwedge", options: "mA"},
     {trigger: "Vorr", replacement: "\\bigvee", options: "mA"},
-	{trigger: "\\\\(neq|geq|leq|gg|ll|sim|approx|wedge|vee|bigwedge|bigvee)([A-Za-z])", replacement: "\\[[0]] [[1]]", options: "rmA"},
+    {trigger: "([^\\\\])(neq|geq|leq|gg|ll|sim|approx|simeq|lesssim|wedge|vee|bigwedge|bigvee)", replacement: "\\[[0]] [[1]]", options: "rmA"},
+	{trigger: "\\\\(neq|geq|leq|gg|ll|sim|approx|simeq|lesssim|wedge|vee|bigwedge|bigvee)([A-Za-z])", replacement: "\\[[0]] [[1]]", options: "rmA"},
+	{trigger: "\\\\(neq|geq|leq|gg|ll|sim|approx|simeq|lesssim|wedge|vee|bigwedge|bigvee)([0-9])", replacement: "\\[[0]][[1]]", options: "rmA"},
 
     // Arrows
 	{trigger: "<-", replacement: "\\leftarrow ", options: "mA"},
@@ -151,13 +156,15 @@
 	{trigger: "=>", replacement: "\\Rightarrow ", options: "mA"},
 	{trigger: "==>", replacement: "\\implies ", options: "mA"},
 	{trigger: "~>", replacement: "\\leadsto ", options: "mA"},
-	{trigger: "w>", replacement: "\\rightsquigarrow ", options: "mA"},
+    {trigger: "([^\\\\])(leftarrow|leftrightarrow|Leftarrow|impliedby|Leftrightarrow|iff|to|rightarrow|Rightarrow|implies|leadsto)", replacement: "[[0]]\\[[1]]", options: "rmA"},
+    {trigger: "\\\\(leftarrow|leftrightarrow|Leftarrow|impliedby|Leftrightarrow|iff|to|rightarrow|Rightarrow|implies|leadsto)([A-Za-z])", replacement: "\\[[0]] [[1]]", options: "rmA"},
+    {trigger: "\\\\(leftarrow|leftrightarrow|Leftarrow|impliedby|Leftrightarrow|iff|to|rightarrow|Rightarrow|implies|leadsto)([0-9])", replacement: "\\[[0]][[1]]", options: "rmA"},
 
     // Set Theory
 	{trigger: "set", replacement: "\\{ $0 \\}$1", options: "m"},
 	{trigger: "eset", replacement: "\\emptyset", options: "mA"},
 	{trigger: "===", replacement: "\\equiv", options: "mA"},
-	{trigger: "\\\\\\", replacement: "\\setminus", options: "mA"},
+	{trigger: "\\-", replacement: "\\setminus", options: "mA"},
 	{trigger: "inn", replacement: "\\in", options: "mA"},
 	{trigger: "nii", replacement: "\\ni", options: "mA"},
 	{trigger: "notin", replacement: "\\not\\in", options: "mA"},
@@ -166,7 +173,7 @@
 	{trigger: "e\\xi sts", replacement: "\\exists", options: "mA", priority: 1},
 	{trigger: "EE", replacement: "\\exists", options: "mA", priority: 1},
 	{trigger: "AA", replacement: "\\forall", options: "mA", priority: 1},
-	{trigger: "\\xin", replacement: "x\\in", options: "mA", priority: 1},
+	{trigger: "\\xinn", replacement: "x\\in", options: "mA", priority: 1},
 	{trigger: "\\\\(in|ni|emptyset|equiv|cap|cup|setminus)([A-Za-z])", replacement: "\\[[0]] [[1]]", options: "rmA"},
     {trigger: "uand", replacement: "\\cap ", options: "mA"},
     {trigger: "uorr", replacement: "\\cup ", options: "mA"},
@@ -177,23 +184,27 @@
     {trigger: "\\\\mathbb{(C|R|Z|N|I)}\\^{n\\\\times n}n", replacement: "\\mathbb{[[0]]}^{n\\times n\\times n}", options: "rmA"},
 	{trigger: "\\\\mathbb{(C|R|Z|N|I)}(\\d)", replacement: "\\mathbb{[[0]]}^{[[1]]}", options: "rmA", description: "Auto number supscript", priority: -1},
 	{trigger: "\\\\mathbb{(C|R|Z|N|I)}\\^{(\\d+)}(\\d)", replacement: "\\mathbb{[[0]]}^{[[1]][[2]]}", options: "rmA", priority: -1},
+    {trigger: "([^\\\\])(emptyset|equiv|setminus|in|ni|subset|subseteq|exists|forall|cap|cup|bigcap|bigcup)", replacement: "[[0]]\\[[1]]", options: "rmA"},
+    {trigger: "\\\\(emptyset|equiv|setminus|in|ni|subset|subseteq|exists|forall|cap|cup|bigcap|bigcup)([A-Za-z])", replacement: "\\[[0]] [[1]]", options: "rmA"},
+    {trigger: "\\\\(emptyset|equiv|setminus|in|ni|subset|subseteq|exists|forall|cap|cup|bigcap|bigcup)([0-9])", replacement: "\\[[0]][[1]]", options: "rmA"},
 
 	// Symbols
-	{trigger: "sum", replacement: "\\sum_{ ${0:i} = ${1:0} }^{${2:n}} $3", options: "mA"},
-	{trigger: "prod", replacement: "\\prod_{ ${0:i} = ${1:0} }^{${2:n}} $3", options: "mA"},
-	{trigger: "lim", replacement: "\\lim_{ ${0:n} \\to ${1:\\infty} } $2", options: "mA"},
+	{trigger: "sum", replacement: "\\sum\\limits_{ ${0:i} = ${1:0} }^{${2:n}} $3", options: "mA"},
+	{trigger: "prod", replacement: "\\prod\\limits_{ ${0:i} = ${1:0} }^{${2:n}} $3", options: "mA"},
+	{trigger: "lim", replacement: "\\lim\\limits_{ ${0:n} \\to ${1:\\infty} } $2", options: "mA"},
 	{trigger: "([^\\\\])pm", replacement: "[[0]]\\pm", options: "rm"},
 	{trigger: "([^\\\\])mp", replacement: "[[0]]\\mp", options: "rm"},
 	{trigger: "+-", replacement: "\\pm", options: "mA"},
 	{trigger: "-+", replacement: "\\mp", options: "mA"},
 	{trigger: "Sq", replacement: "\\square", options: "mA"},
-	{trigger: "nabl", replacement: "\\nabla", options: "mA"},
-	{trigger: "del", replacement: "\\nabla", options: "mA"},
 	{trigger: "xx", replacement: "\\times", options: "mA"},
 	{trigger: "...", replacement: "\\dots", options: "mA"},
 	{trigger: "c..", replacement: "\\cdots", options: "mA"},
 	{trigger: "v..", replacement: "\\vdots", options: "mA"},
 	{trigger: "d..", replacement: "\\ddots", options: "mA"},
+    {trigger: "([^\\\\])(pm|mp|square|nabla|times|dots|cdots|vdots|ddots|cdot|infty|oplus|otimes)", replacement: "[[0]]\\[[1]]", options: "rmA"},
+    {trigger: "\\\\(pm|mp|square|nabla|times|dots|cdots|vdots|ddots|cdot|infty|oplus|otimes)([A-Za-z])", replacement: "\\[[0]] [[1]]", options: "rmA"},
+    {trigger: "\\\\(pm|mp|square|nabla|times|dots|cdots|vdots|ddots|cdot|infty|oplus|otimes)([0-9])", replacement: "\\[[0]][[1]]", options: "rmA"},
 
     // Fonts
 	{trigger: "mcal", replacement: "\\mathcal{$0}$1", options: "mA"},
