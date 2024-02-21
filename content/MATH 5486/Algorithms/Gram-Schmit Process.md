@@ -15,3 +15,14 @@ v^{(i)} & =e^{(i)}-\sum\limits_{ j < i }\left\langle e^{(i)},u^{(j)} \right\rang
 \end{align}
 $$
 $u^{(i)}$ is a linear combination of $e^{(1)},e^{(2)},\dots,e^{(n)}$ so $U=\left[ u^{(1)},u^{(2)},\dots,u^{(n)} \right]$ is upper triangular.
+
+## More Useful?
+Let $\{ x_{1},\dots,x_{n} \}$ be a set of $k$ linearly independent set in $\mathbb{R}^{n}$. Then,
+$$
+\begin{align}
+v_{1} & =x_{1} \\
+v_{2} & =x_{2}-\left( \frac{v_{1}^{\top}x_{2}}{v_{1}^{\top}v_{1}} \right)v_{1} \\
+ & \vdots \\
+v_{k} & =x_{k}-\sum\limits_{ i = 1 }^{k-1} \left( \frac{v_{i}^{\top}x_{k}}{v_{i}^{\top}v_{i}} \right)v_{i}
+\end{align}
+$$

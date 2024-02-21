@@ -1,5 +1,5 @@
 ## Ramsey Number
-The **Ramsey number** $R(s,t)$ is the smallest value of $n$ s.t. any [[Colored Graphs|coloring]] of edges of $K_{n}$ in red and green has either $K_{s}$ subgraph with red edges or $K_t$ subgraphs with green edges.
+The **Ramsey number** $R(s,t)$ is the smallest value of $n$ s.t. any [[Colored Graphs|coloring]] of edges of $K_{n}$ in red and green has either $K_{s}$ subgraph with red edges or $K_t$ subgraph with green edges.
 (for other uses, consider the red edges as no edges)
 
 $$
