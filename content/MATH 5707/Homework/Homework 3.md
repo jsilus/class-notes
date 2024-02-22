@@ -1,4 +1,14 @@
 Worked with Matthew Lehr
+## 4.
+
+## 6.
+Assume that there does not exist an infinite line $A$ made up of points of $S$.
+We can build a set $A$ that has no three collinear points vertex by vertex. Start with two arbitrary vertices in $A$. These form a line. Now, repeat the following:
+1) Pick any vertex not in $A$
+2) If the vertex is collinear with two other vertices in $A$, remove it. Add it otherwise.
+3) Repeat until $A$ is infinite.
+
+Suppose you are unable to find an infinite number of points such that you can repeat with this process. Then, by the Pigeonhole Principle, there must be an infinite number of points contained within a single line. This contradicts our assumption that $A$ doesn't have an infinite line.
 ## 7.
 Let us call this infinite graph $G_{1}$. Let $x_{1}\in G_{1}$ be an arbitrarily picked vertex. There are infinitely many red edges incident to it or infinitely many green edges incident to it. Let us call this color $c_{1}$.
 
