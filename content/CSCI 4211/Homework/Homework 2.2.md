@@ -36,7 +36,16 @@ An IP address.
 #### VI.
 ns-auth-1.umn.edu
 ### b.
-
+#### I.
+The destination port for the query is port 53.
+#### II.
+The source port for the response is this same port 53.
+#### III.
+The query is sent to the IP address 192.168.0.1. This is my local DNS server because it's my router. I can also check my computer's wifi configuration and see that the router is the only configured DNS server.
+#### IV.
+I think the responses come from my local DNS server because it doesn't have an authority server within the response.
+#### V.
+![[wireshark.png]]
 ## 3.
 ### a.
 #### I.
