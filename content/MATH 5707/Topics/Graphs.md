@@ -1,6 +1,7 @@
 
 >[!def] graph
 >A graph $G$ is an ordered pair $(V,E)$ such that $E$ is a subset of set $V^{2}$
+
 ## Helpful terms
 - $V$ - vertices
 - $E$ - edges
@@ -22,3 +23,4 @@
 - Directed - does not fit our class definition of graphs
 - Empty - no edges
 - [[Colored Graphs|Bitartite]] - color vertices black and white such that all edges have opposite vertices
+

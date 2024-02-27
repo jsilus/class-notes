@@ -1,3 +1,0 @@
-- Provides weighted fairness
-- Assign weights to processes
-- Processes get CPU service in proportion to weights

@@ -1,3 +1,0 @@
-- Scheduler picks he threads with least surplus values
-- Lagging threads get closer to their due
-- Threads that are ahead are restrained

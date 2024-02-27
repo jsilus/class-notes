@@ -1,1 +1,0 @@
-A [[Graph Walks|graph walk]] such that each vertex is passed exactly once

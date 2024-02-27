@@ -25,7 +25,7 @@ $$
 ##### Step 2: Check $|g'(x)|\le k<1$?
 By $f(p)=0\Rightarrow g'(p)=0$ and $g'(x)$ is continuous,
 
->[!tip] Problem 4b in [[MATH 5485/Homework/Homework 2]] is proving this
+>[!tip] Problem 4b in [[Homework 2]] is proving this
 
 there exists a $\delta$ with $0<\delta<\delta_{1}$ for which $|g'(x)|\le k<1$ for all $x\in[p-\delta,p+\delta]$.
 

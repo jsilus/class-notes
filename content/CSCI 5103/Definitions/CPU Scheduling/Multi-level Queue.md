@@ -1,9 +1,0 @@
-- Partition the run queue into multiple queues
-	- Each queue has a different class of processes
-- Two-level scheduling
-	- Select a queue
-	- Schedule a process from the selected queue
-- Queue selection
-	- Priority based
-	- Time-slicing
-	- Proportional-share
