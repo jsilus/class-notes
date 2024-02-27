@@ -33,11 +33,26 @@ $$
 This makes sense, as the only tree with two vertices is where each is connected to the other.
 
 **Inductive Step:**
-Let us assume that the equation holds for $n=k$ for some $k\ge2$. We show that it will hold for $n=k+1$. Then, by our equation the number of trees for $k+1$ integers in the degree sequence should be
 
+**Main Proof:**
+Let us assume that the equation holds for $n=k$ for some $k\ge2$. We show that it will hold for $n=k+1$. We can take the given trees formed by the first $k$ vertices and add a leaf onto one of these vertices. This would reduce the number of edges this vertex needs by one, and leave us with a new vertex $k+1$ with degree 1. Because we can do this for each vertex, this is equivalent to saying
 $$
-\frac{(k-1)!}{(d_{1}-1)!(d_{2}-1)!\cdots(d_{k}-1)!(d_{k+1}-1)!}=
+\begin{align*}
+\text{\# trees}&= \frac{(k-2)!}{(d_{1}-2)!(d_{2}-1)!\cdots(d_{k}-1)!}+\cdots+\frac{(k-2)!}{(d_{1}-1)!(d_{2}-1)!\cdots(d_{k}-2)!}\\
+&= \frac{(d_{1}-1)(k-2)!}{(d_{1}-1)!(d_{2}-1)!\cdots(d_{k}-1)!}+\cdots+\frac{(d_{k}-1)(k-2)!}{(d_{1}-1)!(d_{2}-1)!\cdots(d_{k}-1)!}\\
+&= \frac{(k-2)!}{(d_{1}-1)!(d_{2}-1)!\cdots(d_{k}-1)!}[(d_{1}-1)+(d_{2}-1)+\cdots+(d_{k}-1)]\\
+&= \frac{(k-2)!}{(d_{1}-1)!(d_{2}-1)!\cdots(d_{k}-1)!}(d_{1}+d_{2}+\cdots+d_{k}-k)
+\end{align*}
 $$
+We know that $d_{1}+d_{2}+\cdots+d_{k+1}=2k$ by the problem. Then, because $k+1$ is a leaf, $d_{1}+d_{2}+\cdots+d_{k}=2k-1$. This means that
+$$
+\begin{align*}
+\text{\# trees}&= \frac{(k-2)!}{(d_{1}-1)!(d_{2}-1)!\cdots(d_{k}-1)!}(d_{1}+d_{2}+\cdots+d_{k}-k)\\
+&= \frac{(k-2)!}{(d_{1}-1)!(d_{2}-1)!\cdots(d_{k}-1)!}(k-1)\\
+&= \frac{(k-1)!}{(d_{1}-1)!(d_{2}-1)!\cdots(d_{k}-1)!}
+\end{align*}
+$$
+satisfying our equation.
 ## Problem 8
 Let $T'$ be a spanning tree which is not the minimum spanning tree and is calculated by our new algorithm. Let $T$ be the minimum spanning tree calculated by our original greedy algorithm which is most similar to $T'$. Let $S$ be the subtree of our modified algorithm at the first step such that our greedy algorithm picks an edge that isn't connected to $S$.
 

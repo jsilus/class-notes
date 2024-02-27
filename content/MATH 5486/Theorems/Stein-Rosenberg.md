@@ -10,7 +10,7 @@ $$
 &\le \lVert T\rVert\lVert x-x^{(0)}\rVert+\lVert x^{(1)}-x^{(0)}\rVert\\
 (1-\lVert T\rVert)\lVert x-x^{(0)}\rVert&\le \lVert x^{(1)}-x^{(0)}\rVert\\
 \lVert x-x^{(0)}\rVert&\le \frac{1}{1-\lVert T\rVert}\lVert x^{(1)}-x^{(0)}\rVert\\
-\text{then, }\lVert x-x^{(k)}\rVert&\le \boxed{\frac{\lVert T\rVert^{k}}{1-\lVert T\rVert}\lVert x^{(1)}-x^{0}\rVert}
+\text{then, }\lVert x-x^{(k)}\rVert&\le \boxed{\frac{\lVert T\rVert^{k}}{1-\lVert T\rVert}\lVert x^{(1)}-x^{(0)}\rVert}
 \end{align*}
 $$
 

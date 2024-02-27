@@ -1,0 +1,2 @@
+- Achieves perfect proportionate allocation
+	- Each process gets a virtual CPU proportional to its weight

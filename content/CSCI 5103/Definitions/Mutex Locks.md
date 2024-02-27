@@ -1,0 +1,1 @@
+Synchronization tool. Lock or unlock, only one thread can possess at a time.

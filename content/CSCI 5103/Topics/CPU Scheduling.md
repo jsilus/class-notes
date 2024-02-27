@@ -21,4 +21,10 @@ Most process exhibit a sequence of CPU-I/O bursts
 
 ## Methods
 - [[First Come First Serve]]
-- 
+- [[Lottery]]
+- [[Hierarchical]]
+- [[Multi-level Queue]]
+- [[Priority]]
+- [[Round-Robin]]
+- [[Shortest Job First]]
+- [[Proportional-Share]]
