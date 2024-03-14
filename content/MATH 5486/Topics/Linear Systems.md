@@ -38,7 +38,7 @@ $$
 [[Positive Definite]]
 ## Theorems
 - [[Theorem 1]]
-- [[Theorem 2]]
+- [[Square Matrix Theorem]]
 
 
 

@@ -5,10 +5,12 @@ r=b-A\tilde{x}
 $$
 If $\lVert r \rVert$ is small, then $\lVert x-\tilde{x} \rVert$ is small
 
-**Theorem:** Suppose that $\tilde{x}$ is an approximate solution of $Ax=b$ and $r=b-A\tilde{x}$ is the residual for $\tilde{x}$. If $A^{-1}$ exists, then $\lVert x-\tilde{x} \rVert\leq \lVert A^{-1} \rVert\lVert r \rVert$. If $x\neq 0$ and $b\neq 0$, then $$
+**Theorem:** Suppose that $\tilde{x}$ is an approximate solution of $Ax=b$ and $r=b-A\tilde{x}$ is the residual for $\tilde{x}$. If $A^{-1}$ exists, then $\lVert x-\tilde{x} \rVert\leq \lVert A^{-1} \rVert\lVert r \rVert$. If $x\neq 0$ and $b\neq 0$, then
+$$
 \frac{1}{\lVert A \rVert \lVert A^{-1} \rVert } \frac{\lVert r \rVert }{\lVert b \rVert }\leq\frac{\lVert x-\tilde{x} \rVert}{\lVert x \rVert }\leq \underbrace{ \lVert A \rVert \lVert A^{-1} \rVert \frac{\lVert r \rVert }{\lVert b \rVert } }_{ \text{relative error} }
 $$
-*Proof:* $$
+*Proof:*
+$$
 \begin{align}
 r&=b-A\tilde{x}=Ax-A\tilde{x} \\
 &=A(x-\tilde{x}) \\

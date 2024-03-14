@@ -1,0 +1,44 @@
+A situation where nobody can make progress
+
+## Dining Philosophers Problem
+- N philosophers sitting around a table
+    - Bowl of noodles in front of each
+    - One chopstick between each pair
+- Each philosopher can think or eat
+    - Eating requires both chopsticks
+- Philosophers can only pick up one chopstick at a time
+
+## Necessary Conditions
+- Mutual Exclusion
+- Hold and wait
+- No preemption
+- Circular wait
+
+## Resource Allocation Graph
+- Vertices are threads and resources
+- Directed edges indicate what is waiting on what
+- Cycle implies that a deadlock may be there
+    - Sufficient condition if single resources
+
+## Prevention
+- Avoid any of the necessary conditions
+- Total Ordering
+    - Global ordering of all resources
+    - Very hard at a large scale
+- Resource Allocation State
+    - A state is safe if the system can allocate resourecs while avoiding a deadlock
+    - A state is unsafe if the system could go into deadlock at some point
+    - The system will allocate resources to avoid going int o an unsafe state
+- **Ostrich Algorithm**
+    - Ignore potential deadlocks
+    - Detecting or avoiding deadlocks may be costly or inefficient
+    - Deadlocks may occur very rarely
+
+## Related
+- Livelock
+    - Threads not blocked, but no progress
+    - Solution is to break synchronization with randomization
+- Priority Inversion
+    - A higher priority process waiting for a lower priority process
+    - Solution is priority inheritence
+        - Lower priority process holding a lock inherits higher priority process' priority temporarily

@@ -2,6 +2,7 @@ Graphs where the vertices are colored such that no vertex with a color is connec
 Number of colors needed for a graph is **chromatic number** $\chi(G)$ or $\gamma(G)$.
 The **clique number** $\omega(G)$ represents the maximum number of vertices in a graph $G$ that are in a group such that any two vertices are adjacent for all vertices.
 The **chromatic polynomial** $p_{G}(x)$ is the number of ways to properly color graph $G$ with $x$ colors.
+$\alpha(G)$ is the size of the maximum independent set in $G$. (set such that no vertices are connected)
 **Broken cycles** are cycles without their maximum edge.
 
 $\chi(G)=2\quad\rightarrow$ **bipartite** 
@@ -61,3 +62,5 @@ $p_{H}=p_{G}-p_{G''}=x^{n}-mx^{n-1}+\sum\limits_{i=2}^{n-k}(-1)^{i}(b_{i}+c_{i})
 **Theorem:** $p_H(x)=\sum\limits_{i=0}^{n-1}(-1)^ia_ix^{n-i}$ where $a_i$ is the number of $i$-subsets of $E$.
 
 **Theorem:** $p_{G}(x)$ has no roots.
+
+**Theorem:** Let $G=(V,E)$ have $n$ vertices and $\frac{nd}{2}$ edges, $d\geq1$. Then $\alpha(G)\geq \frac{n}{2d}$
