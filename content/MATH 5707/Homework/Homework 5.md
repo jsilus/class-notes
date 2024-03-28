@@ -1,0 +1,5 @@
+## 2.
+Start with the graph $G$. Call the maximal degree $k$. Keep adding edges and vertices until we have a new graph $K$ which is k-regular and bipartite. By Hall's Marriage Theorem, there exists a perfect matching. Choose a matching such that all vertices in $A$ have neighbors in $G$. Then, after removing all of the added vertices and edges, we maintain the fact that the matching covers $A$.
+## 3.
+Form a bipartite graph $G$ from $A_{1},\dots,A_{m}$ and $B_{1},\dots,B_{m}$ with an edge between any $A_{i}$ and $B_{j}$ if and only if $A_{i}\cap B_{j}\not\equiv \emptyset$. For any set $A$ formed by the union of any $k$ $A_{i}$'s, there are $kn$ unique elements within the union. Then, there exist at least $k$ $B_{j}$'s that are neighbors to $A$. This means that by Hall's Marriage Theorem, a perfect matching exists. We can then renumber the $B_{j}$'s according to this matching to make it so that $A_{i}\cap B_{i}$ is non-empty for every $i$.
+## 8.

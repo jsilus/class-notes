@@ -1,0 +1,2 @@
+- Replaces the page that will not be used for the longest period of time
+- **Oracle algorithm:** perfect knowledge of future 

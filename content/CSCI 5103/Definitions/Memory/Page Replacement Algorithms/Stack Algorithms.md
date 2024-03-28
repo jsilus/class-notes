@@ -1,0 +1,2 @@
+- Class of page replacement algorithms
+	- Set of resident pages for $n$ frames is always a subset of resident pages for $(n+1)$ frames

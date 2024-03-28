@@ -111,3 +111,6 @@ x-\tilde{x}&=
 \end{pmatrix}
 \end{align}
 $$
+
+*Problem:* Find $x$ such that the norm of the residual is minimized.
+**Lemma:** If $x$ is a point such that $A^{\top}(Ax-b)=0$, then $x$ solves the least-square problem.
